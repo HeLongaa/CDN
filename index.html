@@ -1,12 +1,21 @@
 <!DOCTYPE HTML>
-<html>
+<html style="height: 100%;">
 <head>
     <link rel="stylesheet" href="https://font.onmicrosoft.cn/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css" />
     <style>
-      body{
+      html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
           font-family: "LXGW WenKai Screen";
           font-size: 18px;
-          
+      }
+      .content-wrap {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
       }
       .center-image {
           display: block;
@@ -15,43 +24,29 @@
           width: 120px;
       }
       .center-content {
-          text-align: center; /* 使文本居中 */
-          margin: auto; /* 上下自动边距 */
-          width: 80%; /* 或你希望的宽度，使内容居中 */
-      }
-      .responsive-iframe {
+          text-align: center;
+          margin: auto;
           width: 80%;
-          height: 100vh; /* 调整这个高度值以满足你的需要 */
-          border: none;
-          margin: auto; /* 左右自动边距以居中 */
-          display: block; /* 确保 iframe 作为块级元素处理 */
+          max-width: 960px;
       }
-
-      /* 添加这个样式来包装 iframe 并使其居中 */
-      .center-iframe-container {
-          display: flex;
-          justify-content: center; /* 水平居中 */
-          align-items: center; /* 垂直居中，如果需要的话 */
-          height: 100vh; /* 根据需要调整高度 */
-          width: 100%; /* 容器宽度 */
-      }
-    
-    </style>  
+    </style>    
     <meta charset="utf-8">
     <title>一府博客资源</title>
-    <!-- 添加网站图标 -->
     <link rel="icon" href="/img/favicon.webp" type="image/x-icon">
 </head>
 <body>
-    <div class="center-content">
-        <img src="/img/favicon.webp" class="center-image" alt="一府">
-        <h1 style="color:red;text-align: center;">一府博客静态资源</h1>
-        <p>博客资源仓库，部署在vercel，详细内容请访问<a href="https://blog.duolaa.asia/">一府</a></p>
-        <h2>本站主要用于加速</h2>
-        <p>图片文件、样式文件</p>
+    <div class="content-wrap">
+        <div class="center-content">
+            <img src="/img/favicon.webp" class="center-image" alt="一府">
+            <h1 style="color:red;">一府博客静态资源</h1>
+            <p>博客资源仓库，详细内容请访问<a href="https://blog.duolaa.asia/" target="_blank">一府</a></p>
+            <h2>本站主要用于加速</h2>
+            <p>图片文件、样式文件</p>
+        </div>
     </div>
-    <!-- 嵌入的网页 -->
-    <div class="center-content">
-      <a href="https://zhale.me/http/?{%22Target%22:%22https://resources.blog.duolaa.asia%22,%22Options%22:{%22ISPs%22:[%22%E7%A7%BB%E5%8A%A8%22,%22%E7%94%B5%E4%BF%A1%22,%22%E8%81%94%E9%80%9A%22,%22%E6%B5%B7%E5%A4%96%22],%22Method%22:%22GET%22,%22ParseMode%22:%22default%22,%22SkipSSLVerify%22:false,%22FollowRedirect%22:true},%22IsContinue%22:false}">测速</a></div>
+    <footer style="background-color: #f1f1f1; text-align: center; padding: 10px;">
+        <p>© 2024 <a href="https://blog.duolaa.asia/" target="_blank">一府</a>博客.版权所有</p>
+        <p>Powered by <a href="https://vercel.com/" target="_blank">Vercel</a> | CDN：<a href="https://qiniu.com/" target="_blank">七牛云</a> & <a href="https://www.upyun.com" target="_blank">又拍云</a> & <a href="https://blogcdn.net/" target="_blank">BlogCDN</a></p>
+    </footer>
 </body>
 </html>
