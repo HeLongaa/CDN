@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
 <title>404 - 当前网页不存在|一府</title>
-<link rel="shortcut icon" href="/img/favicon.webp" />
+<link rel="shortcut icon" href="jsdelivr.png" />
 <link href="https://font.onmicrosoft.cn/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css" rel="stylesheet">
 <style>
 html, body {
@@ -339,13 +339,16 @@ html, body {
           url = window.location.pathname;
           type = url.substring(url.lastIndexOf('.') + 1, url.length);
           filename = url.substring(url.lastIndexOf('/') + 1, url.length);
-          if (type =="html") {
+          if (type =="404.html") {
             document.write("404");
             filename = "None"
           }
           else {
             if (type == "webp" || type == "png" || type == "jpg" || type == "ico"){
               ftype = "图片"
+            }
+            else if (type == "html"){
+              ftype = "网页"
             }
             else{
               ftype ="资源"
