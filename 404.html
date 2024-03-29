@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
 <title>404 - 当前网页不存在|一府</title>
-<link rel="shortcut icon" href="/img/favicon.webp" />
+<link rel="shortcut icon" href="jsdelivr.png" />
 <link href="https://font.onmicrosoft.cn/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css" rel="stylesheet">
 <style>
 html, body {
@@ -337,21 +337,26 @@ html, body {
       <div class="box__description-title">
         <script>
           url = window.location.pathname;
-          url = url.substring(url.lastIndexOf('.') + 1, url.length);
-          if (url == "webp" || url == "png" || url == "jpg" || url == "ico"){
-            type = "图片"
+          type = url.substring(url.lastIndexOf('.') + 1, url.length);
+          filename = url.substring(url.lastIndexOf('/') + 1, url.length);
+          if (type =="html") {
+            document.write("404");
+            filename = "None"
           }
-          else{
-            type ="资源"
+          else {
+            if (type == "webp" || type == "png" || type == "jpg" || type == "ico"){
+              ftype = "图片"
+            }
+            else{
+              ftype ="资源"
+            }
+            document.write("404:该" + ftype + "不存在!");
           }
-          document.write("404:该" + type + "不存在!");
         </script>
       </div>
       <div class="box__description-text">
         <script>
-          url = window.location.pathname;
-          url = url.substring(url.lastIndexOf('/') + 1, url.length);
-          document.write("Fail File:" + url);
+          document.write("Fail File:" + filename);
         </script>
       </div>
       <div class="box__description-text">访问博客获取帮助</div>
