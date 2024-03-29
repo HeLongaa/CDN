@@ -333,8 +333,27 @@ html, body {
   </div> 
   <div class="box__description">
     <div class="box__description-container">
-      <div class="box__description-title"> 当前网页不存在！</div>
-      <div class="box__description-text">感谢访问一府博客</div>
+      <div class="box__description-title">
+        <script>
+          url = window.location.pathname;
+          url = url.substring(url.lastIndexOf('.') + 1, url.length);
+          if (url == "webp" || url == "png" || url == "jpg" || url == "ico"){
+            type = "图片"
+          }
+          else{
+            type ="资源"
+          }
+          document.write("404:该" + type + "不存在!");
+        </script>
+      </div>
+      <div class="box__description-text">
+        <script>
+          url = window.location.pathname;
+          url = url.substring(url.lastIndexOf('/') + 1, url.length);
+          document.write("Fail File:" + url);
+        </script>
+      </div>
+      <div class="box__description-text">访问博客获取帮助</div>
       <p id="hitokoto"> 获取中...</p>
       <script>
         fetch('https://v1.hitokoto.cn')
