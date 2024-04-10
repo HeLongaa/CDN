@@ -325,7 +325,7 @@
         };
         const App = () => {
             const [data] = createResource(() =>
-                fetch('./reporter.json')
+                fetch('https://resources.blog.duolaa.asia/font/reporter.json')
                     .then((res) => res.json())
                     .then((res) => {
                         res.message =
